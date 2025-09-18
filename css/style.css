@@ -1,0 +1,160 @@
+/* --- RESET Y ESTILOS GLOBALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* --- TIPOGRAFÍA ESTILO NOTHING --- */
+.brand-title, .stat-label, .stat-value, .footer-text {
+    font-family: 'DotGothic16', sans-serif;
+    text-transform: uppercase;
+}
+
+/* --- HEADER Y FOOTER --- */
+.main-header, .main-footer {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.main-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-title {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.live-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ff4d4d; /* Rojo icónico */
+    border-radius: 50%;
+    box-shadow: 0 0 8px #ff4d4d;
+    animation: blink 1.5s infinite;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    overflow: hidden;
+}
+
+/* --- PANELES CON EFECTO DE CRISTAL (GLASSMORPHISM) --- */
+.video-panel, .stats-panel {
+    background-color: rgba(30, 30, 30, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px); /* Efecto de cristal esmerilado */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.video-panel {
+    flex: 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#video, #canvasOutput {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.stats-panel {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+/* --- ANIMACIÓN PARA EL PUNTO ROJO --- */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* --- DISEÑO RESPONSIVE PARA PANTALLAS PEQUEÑAS --- */
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .stats-panel {
+        flex-direction: row;
+        flex: 0;
+    }
+    .stat-item {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    .stat-value {
+        font-size: 2rem;
+    }
+}

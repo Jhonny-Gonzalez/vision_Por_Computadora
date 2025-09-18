@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facial Interface [M-1]</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <span class="brand-title">FACIAL INTERFACE [M-1]</span>
+            <div class="status-indicator">
+                <div id="live-dot" class="live-dot"></div>
+                <span id="status">INITIATING...</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="video-panel">
+            <video id="video" autoplay muted playsinline></video>
+            <canvas id="canvasOutput"></canvas>
+        </div>
+
+        <div class="stats-panel">
+            <div class="stat-item">
+                <span class="stat-label">EYE.BLINK</span>
+                <span id="eyeCounter" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">MOUTH.OPEN</span>
+                <span id="mouthCounter" class="stat-value">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">EYEBROW.RAISE</span>
+                <span id="eyebrowCounter" class="stat-value">0</span>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <span class="footer-text">DESIGNED BY [Tu Nombre] // POWERED BY MEDIAPIPE</span>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
